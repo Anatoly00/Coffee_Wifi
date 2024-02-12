@@ -1,0 +1,29 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+    {{ super() }}
+<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+<style>
+        body {
+            background-image: url("{{ url_for('static', filename='1.jpg') }}");
+            background-size: cover;
+            color: yellow;
+            font-weight: bold; /* Set text to bold */
+            font-family: cursive; /* Set text to cursive font */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a text shadow for better visibility */
+        }
+    </style>
+{% endblock %}
+{% block title %}Add a New Cafe{% endblock %}
+{% block content %}
+<div class="">
+
+    <div class="container">
+        <h1>Add New Cafe</h1>
+        {{ wtf.quick_form(form, novalidate=True) }}
+    </div>
+</div>
+
+
+{% endblock %}
